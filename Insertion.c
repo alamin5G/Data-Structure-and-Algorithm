@@ -1,4 +1,14 @@
-/**Algorithm for insertion*/
+/**
+ * Algorithm for Inserting Element in a Linear Array.
+1. Set J = N;
+2. Repeat Step 3 and 5 while J>=K;
+3. 		Set LA[J+1] = LA[J];
+4. 		Set J = J-1;
+	[END OF STEP 2 LOOP]
+5. Set LA[K] = ITEM;
+6. Set N = N+1;
+7. EXIT;
+*/
 #include <stdio.h>
 int main(){
 
