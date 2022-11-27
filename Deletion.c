@@ -1,4 +1,12 @@
-/**Algorithm for insertion*/
+/**Algorithm for Deletion
+ * Algorithm for Deleting an Element in a Linear Array.
+1. Set ITEM = LA[K];
+2. Repeat For J=K to N-1;
+ 		Set LA[J] = LA[J+1];
+	[END OF LOOP]
+3. Set N = N-1;
+4. EXIT;
+*/
 #include <stdio.h>
 int main(){
 
