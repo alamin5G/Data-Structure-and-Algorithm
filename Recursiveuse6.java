@@ -9,8 +9,7 @@ public class Recursiveuse6 {
         System.out.println(function(n));
     }
 
-    public static int function(int n){
-        
+    public static int function(int n){ 
         if (n == 0) {
             return n;
         }
