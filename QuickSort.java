@@ -3,17 +3,24 @@ public class QuickSort {
     public static int count = 0;
     public static int opt = 0;
     public static void main(String[] args) {
+        long nanoStarttime;
         int[] array = {9, 5, 0, 11, 17, 8, 23, 3, 14, 6, 29, 42, 10, 7, 16, 31, 2, 19, 4, 13, 
             37, 22, 1, 28, 12, 35, 46, 18, 27, 15, 20, 33, 49, 21, 26, 39, 54, 24, 
             30, 50, 44, 38, 58, 45, 56, 32, 41, 55, 68, 40, 36, 63, 51, 48, 73, 75, 
             65, 59, 52, 71, 66, 60, 70, 82, 64, 77, 95, 80, 67, 88, 93, 79, 85, 89, 
             84, 98, 91, 72, 87, 76, 78, 96, 81, 99, 97, 92, 86, 94, 90, 83, 74, 69};
         System.out.println("Original Array: " + Arrays.toString(array));
+        nanoStarttime = System.nanoTime();
+        long millis_startTime = System.currentTimeMillis(); 
+
         quickSort(array, 0, array.length - 1);
         System.out.println("Sorted Array  : " + Arrays.toString(array));
-        
+        System.out.println("time needed with if condition " + (System.nanoTime() - nanoStarttime));
+        System.out.println("Time taken in milli seconds: "
+                           + (System.currentTimeMillis() - millis_startTime)); 
         System.out.println("swapped: " + count);
         System.out.println("operation: " + opt );
+        
 
     }
     // QuickSort algorithm
@@ -34,9 +41,9 @@ public class QuickSort {
             if (array[j] <= pivot) {
                 i++;
 
-                if (i == j) {
-                    continue;
-                }
+               if (i==j) {
+                continue;
+               }
                 opt++;
                 swap(array, i, j);
                 
