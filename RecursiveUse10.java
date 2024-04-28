@@ -1,12 +1,11 @@
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class test {
-    public static void main (String[] args)
-	{
-        Scanner sc = new Scanner(System.in);
+public class RecursiveUse10 {
+    public static void main(String[] args) {
+        
+        int n = 5; // Sample input
         int[] arr = {7, 12, 1, 20};
-        int[] result = nextGreaterElement(arr, 4);
+        int[] result = nextGreaterElement(arr, n);
         System.out.println("Output: " + Arrays.toString(result));
     }
 
