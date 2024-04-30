@@ -18,6 +18,7 @@ public class SinglyLinkedList {
 
     }
 
+    //to display linkedList data
     public void toDisplay(){
         ListNode current = head;
         while (current != null) {
@@ -27,6 +28,7 @@ public class SinglyLinkedList {
         System.out.println("Null");
     }
 
+    // to calculate the current length of the linkedlist
     public int length(){
         ListNode current = head;
         int counter = 0;
@@ -38,10 +40,26 @@ public class SinglyLinkedList {
         return counter;
     }
 
+    //insert linked list data from the first
     public void insertFirst(int value){
         ListNode newNode = new ListNode<Integer>(value);
         newNode.next = head;
         head = newNode;
+    }
+
+     //insert linked list data into the last
+     public void inserLast(int value){
+        ListNode newNode = new ListNode<Integer>(value);
+       
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        ListNode current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
     }
 
 
@@ -70,6 +88,12 @@ public class SinglyLinkedList {
 
         linkedList.toDisplay();
 
+        //insert last 
+        linkedList.inserLast(0);
+        linkedList.inserLast(1);
+        linkedList.inserLast(10);
+        
+        linkedList.toDisplay();
 
     }
 
