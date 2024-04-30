@@ -18,6 +18,15 @@ public class SinglyLinkedList {
 
     }
 
+    public void toDisplay(){
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("Null");
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.head = new ListNode<Integer>(10);
@@ -30,6 +39,8 @@ public class SinglyLinkedList {
         secListNode.next = thirdListNode; // 10 --> 1 --> 8;
         thirdListNode.next = fourthListNode; // 10 --> 1 --> 8 --> 11;
 
+        //print the linkedList values
+        linkedList.toDisplay();
     }
 
 }
