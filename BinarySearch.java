@@ -1,4 +1,11 @@
 public class BinarySearch {
+    /*
+     * https://www.coursera.org/learn/algorithms-searching-sorting-indexing/home/week/1
+    https://www.coursera.org/learn/dynamic-programming-greedy-algorithms/home/week/1
+    https://www.coursera.org/learn/trees-graphs-basics/home/week/1
+    https://www.coursera.org/learn/mathematics-for-computer-science/home/week/1
+    https://www.coursera.org/learn/cs-fundamentals-2/home/week/1
+     */
     public static void main(String[] args) {
         int[] arr ={1, 2, 4, 8, 9, 12, 45, 55, 86, 101, 340, 341, 355,500};
         int target = 55;
