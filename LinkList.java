@@ -100,8 +100,5 @@ public class LinkList<T> {
         System.out.println("After deleting data from the first");
         linkList.deleteAtFirst();//9->5->2->7->null
         linkList.showData();
-
     }
-
-
 }
