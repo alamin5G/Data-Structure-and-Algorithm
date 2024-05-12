@@ -41,6 +41,7 @@ public class LinkList<T> {
         }
     }
 
+    //print the list node data;
     public void showData(){
         if (head == null) {
             System.out.println("Empty List");
@@ -54,6 +55,34 @@ public class LinkList<T> {
         }
     }
 
+    //delete node from the first;
+    public void deleteAtFirst(){
+        if (head == null) {
+            System.out.println("Empty list");
+        }else{
+            head = head.next;
+        }
+    }
+
+    //delete node from the last;
+    public void deleteAtLast(){
+        if (head == null) {
+            System.out.println("Empty List");
+        }else if(head.next == null){
+            head = null;
+        }else{
+            Node secondLast = head;
+            Node last = head.next;
+            while (last.next != null) {
+                last = last.next;
+                secondLast = secondLast.next;
+            }
+            secondLast.next = null;
+        }
+    }
+
+    //main function
+
     public static void main(String[] args) {
         LinkList<Integer> linkList = new LinkList<>();
         linkList.addAtFirst(2); //->2->null
@@ -65,6 +94,13 @@ public class LinkList<T> {
         linkList.addAtLast(7); //4->9->5->2->7->null
         linkList.addAtLast(3); //4->9->5->2->7->3->null
         linkList.showData();
+        System.out.println("After deleting data from last");
+        linkList.deleteAtLast();//4->9->5->2->7->null
+        linkList.showData();
+        System.out.println("After deleting data from the first");
+        linkList.deleteAtFirst();//9->5->2->7->null
+        linkList.showData();
+
     }
 
 
