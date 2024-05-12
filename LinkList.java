@@ -46,11 +46,11 @@ public class LinkList<T> {
             System.out.println("Empty List");
         }else{
             Node existNode = head;
-            while (existNode.next != null) {
+            while (existNode != null) {
                 System.out.print("" + existNode.data + "->");
                 existNode = existNode.next;
             }
-            System.out.println(existNode.data + "->null");
+            System.out.println("null");
         }
     }
 
