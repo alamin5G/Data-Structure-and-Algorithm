@@ -1,6 +1,8 @@
 public class LinkList<T> {
-    
+
     Node head;
+    int size=0;
+    Node lastNodePosition;
 
     class Node{
         T data;
@@ -9,6 +11,7 @@ public class LinkList<T> {
         Node(T data){
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -17,11 +20,12 @@ public class LinkList<T> {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
-            return;
+            lastNodePosition = newNode; //for new node
+
         }else{
             newNode.next = head;
             head = newNode;
-            return;
+
         }
     }
 
@@ -31,13 +35,14 @@ public class LinkList<T> {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
-            return;
         }else{
-            Node oldNode = head;
-            while (oldNode.next != null) {
-                oldNode = oldNode.next;
-            }
-            oldNode.next = newNode;
+            // Node oldNode = head;
+            // while (oldNode.next != null) {
+            //     oldNode = oldNode.next;
+            // }
+            //oldNode.next = newNode;
+            lastNodePosition.next = newNode;
+            lastNodePosition = newNode;
         }
     }
 
@@ -61,6 +66,7 @@ public class LinkList<T> {
             System.out.println("Empty list");
         }else{
             head = head.next;
+            size--;
         }
     }
 
@@ -70,6 +76,7 @@ public class LinkList<T> {
             System.out.println("Empty List");
         }else if(head.next == null){
             head = null;
+            size--;
         }else{
             Node secondLast = head;
             Node last = head.next;
@@ -77,8 +84,13 @@ public class LinkList<T> {
                 last = last.next;
                 secondLast = secondLast.next;
             }
+            size--;
             secondLast.next = null;
         }
+    }
+
+    public int getSize(){
+        return size;
     }
 
     //main function
@@ -100,5 +112,6 @@ public class LinkList<T> {
         System.out.println("After deleting data from the first");
         linkList.deleteAtFirst();//9->5->2->7->null
         linkList.showData();
+        System.out.println("size of the linked list is = " + linkList.getSize());
     }
 }
