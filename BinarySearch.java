@@ -2,7 +2,7 @@ public class BinarySearch {
     /*
      * 
      * 
-     * https://www.coursera.org/learn/algorithms-searching-sorting-indexing/home/week/1 (8HRs)
+https://www.coursera.org/learn/algorithms-searching-sorting-indexing/home/week/1 (8HRs)
 https://www.coursera.org/learn/dynamic-programming-greedy-algorithms/home/week/1 (13HRs)
 https://www.coursera.org/learn/trees-graphs-basics/home/week/1 (9HRs)
 https://www.coursera.org/learn/mathematics-for-computer-science/home/week/1 (9HRs)
