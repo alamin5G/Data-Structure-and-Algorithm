@@ -143,22 +143,53 @@ public class SinglyLinkedList<E> {
         }else if(position == 0){
             head = head.next;
         }else{
-            Node temp = head;
+            Node<E> temp = head;
             int count = 0;
             while (count < position-1) {
                 count++;
                 temp = temp.next;
             }
             temp.next = temp.next.next;
+            tail = temp;
 
         }
         size--;
+    }
+
+    //find is the element is exist or not
+    public boolean find(E keyValue){
+        Node<E> temp = head;
+        while (temp.next != null) {
+            if (temp.data == keyValue) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    //get the value from given position
+    public E getDataAt(int position){
+        if (head==null || size>=position) {
+            E st = (E) "no data";
+            return st;
+        }else{
+            Node<E> temp = head;
+            int count = 0;
+            while (count < position) {
+                temp = temp.next;
+                count++;
+            }
+            return temp.data;
+        }
     }
 
     // to calculate the current length of the linkedlist
     public int getLength(){
         return size;
     }
+
+    
 
     public static void main(String[] args) {
         SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
@@ -199,11 +230,13 @@ public class SinglyLinkedList<E> {
         linkedList.deleteAt(0);
         linkedList.showData();
         System.out.println("Size = " + linkedList.getLength());
-        System.out.println("After deleteing at somewhere(3)");
-        linkedList.deleteAt(3);
+        System.out.println("After deleteing at somewhere(5)");
+        linkedList.deleteAt(5);
         linkedList.showData();
         System.out.println("Size = " + linkedList.getLength());
-
+        System.out.println("find a node data (12) : " + linkedList.find(12) );
+        System.out.println("find a node data (1) : " + linkedList.find(1) );
+        System.out.println("find a node data at given position(5) : " + linkedList.getDataAt(5));
     }
 
 }
