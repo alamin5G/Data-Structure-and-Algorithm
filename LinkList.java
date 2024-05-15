@@ -1,8 +1,8 @@
 public class LinkList<T> {
 
     Node head;
-    int size=0;
-    Node lastNodePosition;
+    private int size=0;
+    Node lastNodePosition; //we can also mention it as well - tail
 
     class Node{
         T data;
@@ -20,7 +20,7 @@ public class LinkList<T> {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
-            lastNodePosition = newNode; //for new node
+            lastNodePosition = newNode; //for first time node initialization 
 
         }else{
             newNode.next = head;
