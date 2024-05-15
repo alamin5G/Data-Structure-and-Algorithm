@@ -189,7 +189,17 @@ public class SinglyLinkedList<E> {
         return size;
     }
 
-    
+    //reverse the singly linked list
+    public void reverse(){
+        if (head == null) {
+            System.out.println("Empty List");
+        }else if(head.next == null){
+            head.next = null;
+        }else{
+            
+        }
+    }
+
 
     public static void main(String[] args) {
         SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
