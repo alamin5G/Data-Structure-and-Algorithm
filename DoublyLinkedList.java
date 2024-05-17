@@ -40,6 +40,40 @@ public class DoublyLinkedList<E>
         lenght++;
     }
 
+    //delete first
+    public void deleteFirst(){
+        if (isEmpty()) {
+            System.out.println("Empty list");
+            return;
+        }
+
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        }else{
+            head = head.next;
+            head.previous = null;
+        }
+        lenght--;
+    }
+
+    //delete last
+    public void deleteLast(){
+       if (isEmpty()) {
+            System.out.println("Empty List");
+            return;
+       }
+
+       if (head.next == null) {
+            head = null;
+            tail = null;
+       }else{
+        tail = tail.previous;
+        tail.next = null;
+       }
+       lenght--;
+    }
+
     // print the data of each node
     public void display(){
         if (head == null) {
@@ -82,6 +116,19 @@ public class DoublyLinkedList<E>
     public static void main(String[] args) {
         
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<>();
+        linkedList.insert(1);
+        linkedList.insert(2);
+        linkedList.insert(4);
+        linkedList.insert(6);
+        linkedList.display();
+        System.out.println("Size is - " + linkedList.getLength());
+        System.out.println("print last to first");
+        linkedList.displayReverse();
+        System.out.println("After delete first");
+        linkedList.deleteFirst();
+        linkedList.display();
+        System.out.println("Size is - " + linkedList.getLength());
+        linkedList.displayReverse();
 
     }
 }
