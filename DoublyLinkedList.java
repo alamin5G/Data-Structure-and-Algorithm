@@ -40,6 +40,22 @@ public class DoublyLinkedList<E>
         lenght++;
     }
 
+<<<<<<< HEAD
+    //insert at first
+    public void insertFirst(E data){
+        Node<E> newNode = new Node<>(data);
+
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        }else{
+            newNode.next = head;
+            head.previous = newNode;
+            head = newNode;
+        }
+
+        lenght++;
+=======
     //delete first
     public void deleteFirst(){
         if (isEmpty()) {
@@ -72,6 +88,7 @@ public class DoublyLinkedList<E>
         tail.next = null;
        }
        lenght--;
+>>>>>>> 4983c4a33c015c0a182a21c246be23123abba0ec
     }
 
     // print the data of each node
@@ -116,6 +133,17 @@ public class DoublyLinkedList<E>
     public static void main(String[] args) {
         
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<>();
+<<<<<<< HEAD
+        linkedList.insert(2); //2->null;
+        linkedList.insert(9);//2->9->null;
+        linkedList.insert(11); //2->9->11->null;
+        linkedList.display();
+        System.out.println("after insert into the first");
+        linkedList.insertFirst(1); 
+        linkedList.insertFirst(21);
+        linkedList.insertFirst(31); 
+        linkedList.display();
+=======
         linkedList.insert(1);
         linkedList.insert(2);
         linkedList.insert(4);
@@ -129,6 +157,7 @@ public class DoublyLinkedList<E>
         linkedList.display();
         System.out.println("Size is - " + linkedList.getLength());
         linkedList.displayReverse();
+>>>>>>> 4983c4a33c015c0a182a21c246be23123abba0ec
 
     }
 }
