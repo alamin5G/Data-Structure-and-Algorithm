@@ -40,6 +40,22 @@ public class DoublyLinkedList<E>
         lenght++;
     }
 
+    //insert at first
+    public void insertFirst(E data){
+        Node<E> newNode = new Node<>(data);
+
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        }else{
+            newNode.next = head;
+            head.previous = newNode;
+            head = newNode;
+        }
+
+        lenght++;
+    }
+
     // print the data of each node
     public void display(){
         if (head == null) {
@@ -82,6 +98,15 @@ public class DoublyLinkedList<E>
     public static void main(String[] args) {
         
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<>();
+        linkedList.insert(2); //2->null;
+        linkedList.insert(9);//2->9->null;
+        linkedList.insert(11); //2->9->11->null;
+        linkedList.display();
+        System.out.println("after insert into the first");
+        linkedList.insertFirst(1); 
+        linkedList.insertFirst(21);
+        linkedList.insertFirst(31); 
+        linkedList.display();
 
     }
 }

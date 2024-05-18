@@ -194,9 +194,19 @@ public class SinglyLinkedList<E> {
         if (head == null) {
             System.out.println("Empty List");
         }else if(head.next == null){
-            head.next = null;
+            return;
         }else{
-            
+            Node<E> temp = head;
+            while (temp.next != null) {
+                Node<E> prev = null;
+                prev = temp.next;
+                prev.next = temp;
+
+                temp = temp.next;
+
+                System.out.print(prev.data + "->");
+            }
+            System.out.println("null");
         }
     }
 
@@ -247,6 +257,8 @@ public class SinglyLinkedList<E> {
         System.out.println("find a node data (12) : " + linkedList.find(12) );
         System.out.println("find a node data (1) : " + linkedList.find(1) );
         System.out.println("find a node data at given position(5) : " + linkedList.getDataAt(5));
+        System.out.println("Reverse: ");
+        linkedList.reverse();
     }
 
 }
