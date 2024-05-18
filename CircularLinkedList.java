@@ -80,8 +80,10 @@ public class CircularLinkedList<E> {
         linkedList.insert(2);//5->7->2->null;
         linkedList.display();
         System.out.println("Total size = " + linkedList.getLength());
-        
+        linkedList.insertFirst(1);//1->5->7->2->null;
+        linkedList.insertFirst(3);//3->1->5->7->2->null;
+        linkedList.insertFirst(4);//4->3->1->5->7->2->null;
+        linkedList.display();
+        System.out.println("Total size = " + linkedList.getLength());
     }
-
-
 }
