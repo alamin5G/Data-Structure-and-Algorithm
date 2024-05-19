@@ -33,15 +33,30 @@ public class StackJava<E> {
     }
 
     //pop
-    
+    public E pop(){
+        if (top == null) {
+            return (E) "Empty Stack";
+        }
+
+        Node<E> temp = top;
+        if (top.next == null) {
+
+            top = null;
+            return temp.data;
+        }else{
+            top = temp.next;
+            temp.next = null;
+            return temp.data;
+        }
+    }
 
     //get size
     public int length(){
         return size;
     }
 
-
-
+    //peak
+    
     //main method
     public static void main(String[] args) {
         StackJava<Integer> stack = new StackJava<>();
