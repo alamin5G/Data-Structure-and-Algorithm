@@ -40,7 +40,6 @@ public class DoublyLinkedList<E>
         lenght++;
     }
 
-<<<<<<< HEAD
     //insert at first
     public void insertFirst(E data){
         Node<E> newNode = new Node<>(data);
@@ -55,40 +54,6 @@ public class DoublyLinkedList<E>
         }
 
         lenght++;
-=======
-    //delete first
-    public void deleteFirst(){
-        if (isEmpty()) {
-            System.out.println("Empty list");
-            return;
-        }
-
-        if (head.next == null) {
-            head = null;
-            tail = null;
-        }else{
-            head = head.next;
-            head.previous = null;
-        }
-        lenght--;
-    }
-
-    //delete last
-    public void deleteLast(){
-       if (isEmpty()) {
-            System.out.println("Empty List");
-            return;
-       }
-
-       if (head.next == null) {
-            head = null;
-            tail = null;
-       }else{
-        tail = tail.previous;
-        tail.next = null;
-       }
-       lenght--;
->>>>>>> 4983c4a33c015c0a182a21c246be23123abba0ec
     }
 
     // print the data of each node

@@ -41,8 +41,8 @@ public class HashTable<K, V>{
     }
 
     //put value key, value
-    public void put(K key, V value){
-
+    public void put(Integer key, V value){
+        
     }
 
     //get result
@@ -57,6 +57,14 @@ public class HashTable<K, V>{
     }
 
     public static void main(String[] args) {
+
+        HashTable hashTable = new HashTable<>(10);
+        hashTable.put(5, "Alamin");
+        hashTable.put(15, "Rakib");
+        hashTable.put(5, "Nuha");
+
+        System.out.println(hashTable.size());
+
        
     }
 }
