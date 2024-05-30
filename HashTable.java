@@ -56,7 +56,7 @@ public class HashTable<K, V>{
             }
             temp = temp.next;
         }
-
+        size++;
         temp = bucket[bucketIndex];
         HashNode<Integer, V> node = new HashNode<Integer,V>(key, value);
         node.next = temp;
@@ -83,21 +83,22 @@ public class HashTable<K, V>{
         HashNode first = bucket[bucketIndex];
         HashNode second = null;
 
-        if(first != null && first.next == null){
-            size--;
-            return (V) first.value;
-        }
 
         while(first != null){
             
             if(first.key.equals(key)){
-                HashNode temp = first;
-                second.next = temp.next;
-                bucket[bucketIndex] = second;
 
-                first.key = null;
-                first.value = null;
+                HashNode temp = first;
+
+                if (second == temp.next){
+                    bucket[bucketIndex] = second;
+                }else{
+                    second.next = temp.next;
+                    bucket[bucketIndex] = second;
+                }
+
                 first = null;
+
                 size--;
                 return (V) temp.value;
             }
@@ -141,27 +142,27 @@ public class HashTable<K, V>{
         String values = hashTable.remove(101);
         System.out.println(values);
         System.out.println(hashTable.size());
-        values = hashTable.remove(11);
-        System.out.println(values);
+        String s = hashTable.remove(11);
+        System.out.println(s);
         System.out.println(hashTable.size());
-        values = hashTable.remove(33);
-        System.out.println(values);
+        String st = hashTable.remove(33);
+        System.out.println(st);
         System.out.println(hashTable.size());
-        values = hashTable.remove(39);
-        System.out.println(values);
+        String a = hashTable.remove(39);
+        System.out.println(a);
         System.out.println(hashTable.size());
-        values = hashTable.remove(106);
-        System.out.println(values);
+        String b = hashTable.remove(106);
+        System.out.println(b);
         System.out.println(hashTable.size());
-        values = hashTable.remove(23);
-        System.out.println(values);
+        String c = hashTable.remove(23);
+        System.out.println(c);
         System.out.println(hashTable.size());
-        values = hashTable.remove(38);
-        System.out.println(values);
+        String d = hashTable.remove(38);
+        System.out.println(d);
         System.out.println(hashTable.size());
         
-        String valuess = hashTable.remove(101);
-        System.out.println(valuess);
+        String e = hashTable.remove(101);
+        System.out.println(e);
         System.out.println(hashTable.size());
 
     }
