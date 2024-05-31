@@ -98,7 +98,6 @@ public class DoublyLinkedList<E>
     public static void main(String[] args) {
         
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<>();
-<<<<<<< HEAD
         linkedList.insert(2); //2->null;
         linkedList.insert(9);//2->9->null;
         linkedList.insert(11); //2->9->11->null;
@@ -108,7 +107,6 @@ public class DoublyLinkedList<E>
         linkedList.insertFirst(21);
         linkedList.insertFirst(31); 
         linkedList.display();
-=======
         linkedList.insert(1);
         linkedList.insert(2);
         linkedList.insert(4);
@@ -118,11 +116,10 @@ public class DoublyLinkedList<E>
         System.out.println("print last to first");
         linkedList.displayReverse();
         System.out.println("After delete first");
-        linkedList.deleteFirst();
+
         linkedList.display();
         System.out.println("Size is - " + linkedList.getLength());
         linkedList.displayReverse();
->>>>>>> 4983c4a33c015c0a182a21c246be23123abba0ec
 
     }
 }
