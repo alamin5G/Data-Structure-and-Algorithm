@@ -1,3 +1,5 @@
+
+
 public class BinaryTree<E> {
     private Node<E> root;
     private int size;
