@@ -18,20 +18,20 @@ public class InfixToPrefix {
 
             if(Character.isLetterOrDigit(c)){
                 infix.append(c);
-            }else if(c == '('){
+            }else if(c == ')'){
                 stack.push(c);
-            }else if(!stack.isEmpty() && c == ')'){
-                while(!stack.isEmpty() && stack.peek() != '('){
+            }else if(!stack.isEmpty() && c == '('){
+                while(!stack.isEmpty() && stack.peek() != ')'){
                     infix.append(stack.pop());
                 }
-                stack.pop(); //deleting the ( from stack
+                stack.pop(); //deleting the ) from stack
             }else if(isOperator(c)){
-                if(!stack.isEmpty() && precedence(stack.peek()) > precedence(c) )
+                while(!stack.isEmpty() && precedence(stack.peek()) > precedence(c) )
                 {
                     infix.append(stack.pop());
-                }else{
-                    stack.push(c);
                 }
+                    stack.push(c);
+
                 
             }
         }
