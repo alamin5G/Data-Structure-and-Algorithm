@@ -81,24 +81,32 @@ public class BinaryTreeLoopTraversal {
         }
     }
 
-    public void postOrderTraversal(Node root){
-        if(root == null){
+    public void postOrderTraversal(Node root) {
+        if(root == null) {
             return;
         }
-        Stack<Node> stack = new Stack<>();
         Node current = root;
-        while(!stack.isEmpty() || current != null){
-            if(current != null){
+
+         Stack<Node> stack = new Stack<>();
+        while(current != null || !stack.isEmpty()){
+            if(current != null) {
                 stack.push(current);
                 current = current.left;
-            }else{
-                current = stack.pop();
-                System.out.print(current.data + " ");
-
-                current = current.right;
-
+            } else {
+                Node temp = stack.peek().right;
+                if(temp == null) {
+                    temp = stack.pop();
+                    System.out.print(temp.data + " ");
+                    while(!stack.isEmpty() && temp == stack.peek().right) {
+                        temp = stack.pop();
+                        System.out.print(temp.data + " ");
+                    }
+                } else {
+                    current = temp;
+                }
             }
         }
+
     }
 
 
