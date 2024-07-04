@@ -4,11 +4,11 @@ class InsertionSort{
     public static void main(String[] args) {
         int[] arr = { 5, 1, 4, 2, 3};
         System.out.println("Original Array : " + Arrays.toString(arr));
-        selectionSort(arr);
+        insertionSort(arr);;
         System.out.println("After Selection Sort: " + Arrays.toString(arr));
     }
 
-    public static void selectionSort(int[] arr){
+    public static void insertionSort(int[] arr){
         for (int i = 1; i < arr.length; i++) {
             int min = arr[i];
             int j = i-1;
